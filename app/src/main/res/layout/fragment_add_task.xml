@@ -26,27 +26,56 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/titleET"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titleL"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:hint="@string/enter_title"
-            android:inputType="text"
-            android:padding="8dp"
-            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/descriptionL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleET"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/enter_title"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/descriptionL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/enter_description"
             app:layout_constraintBottom_toTopOf="@+id/date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-        </com.google.android.material.textfield.TextInputEditText>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionET"
+                android:layout_width="match_parent"
+                android:gravity="start"
+                android:layout_height="148dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginStart="20dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="8dp"
             app:layout_constraintBottom_toTopOf="@+id/saveBTN"
@@ -59,6 +88,7 @@
                 android:src="@drawable/calendar" />
 
             <TextView
+                android:id="@+id/dateTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -70,13 +100,12 @@
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
             android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
             android:orientation="horizontal"
             android:padding="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date">
+            app:layout_constraintEnd_toEndOf="@+id/descriptionL"
+            app:layout_constraintTop_toTopOf="@+id/date">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -84,6 +113,7 @@
                 android:src="@drawable/time" />
 
             <TextView
+                android:id="@+id/timeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
